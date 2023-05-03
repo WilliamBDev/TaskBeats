@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">TaskBeats</string>
     <string name="delete">Delete</string>
+    <string name="delete_all">Delete All</string>
 </resources>

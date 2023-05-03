@@ -5,6 +5,8 @@ import android.content.Context
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.os.Handler
+import android.os.Looper
 import android.view.Menu
 import android.view.MenuInflater
 import android.view.MenuItem
@@ -33,6 +35,7 @@ class TaskDetailActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_task_detail)
+        setSupportActionBar(findViewById(R.id.toolbar))
 
         // recuperar task da tela anterior
         task = intent.getSerializableExtra(TASK_DETAIL_EXTRA) as Task?
@@ -52,7 +55,7 @@ class TaskDetailActivity : AppCompatActivity() {
 
             if (title.isNotEmpty() && desc.isNotEmpty()){
                 if (task == null) {
-                    addOrUpdateTask(title.hashCode(), title, desc, ActionType.CREATE)
+                    addOrUpdateTask(0, title, desc, ActionType.CREATE)
                 } else {
                     addOrUpdateTask(task!!.id, title, desc, ActionType.UPDATE)
                 }
@@ -61,11 +64,6 @@ class TaskDetailActivity : AppCompatActivity() {
             }
         }
 
-        // recuperar campo xml
-       // tvTitle = findViewById(R.id.tv_task_title_detail)
-
-        //setar um novo texto na tela
-        //tvTitle.text = task?.title ?: "Adicione uma tarefa"
     }
 
     private fun addOrUpdateTask(
@@ -99,8 +97,6 @@ class TaskDetailActivity : AppCompatActivity() {
             }
             else -> super.onOptionsItemSelected(item)
         }
-
-
     }
 
     private fun returnAction(task: Task, actionType: ActionType){
@@ -118,4 +114,5 @@ class TaskDetailActivity : AppCompatActivity() {
             .setAction("Action", null)
             .show()
     }
+
 }
