@@ -1,4 +1,4 @@
-package com.comunidadedevspace.taskbeats
+package com.comunidadedevspace.taskbeats.presentation
 
 import android.view.LayoutInflater
 import android.view.View
@@ -7,6 +7,8 @@ import android.widget.TextView
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
+import com.comunidadedevspace.taskbeats.R
+import com.comunidadedevspace.taskbeats.data.Task
 
 
 class TaskListAdapter(
@@ -51,7 +53,7 @@ class TaskListViewHolder(
     private val tvTaskDescription = view.findViewById<TextView>(R.id.tv_task_description)
 
     fun bind(task: Task,
-            openTaskDetailView:(task: Task) -> Unit
+             openTaskDetailView:(task: Task) -> Unit
     ){
         tvTaskTitle.text = task.title
         tvTaskDescription.text = "${task.id}- ${task.description}"

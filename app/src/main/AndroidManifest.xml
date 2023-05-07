@@ -16,14 +16,14 @@
             android:name=".SplashTask"
             android:exported="false" />
         <activity
-            android:name=".TaskDetailActivity"
+            android:name=".presentation.TaskDetailActivity"
             android:exported="false" />
         <activity
-            android:name=".TaskDetailActivity"
+            android:name=".presentation.TaskDetailActivity"
             android:exported="false"
             tools:ignore="DuplicateActivity" />
         <activity
-            android:name=".MainActivity"
+            android:name=".presentation.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
