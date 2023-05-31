@@ -123,7 +123,7 @@ enum class ActionType {
 
 data class TaskAction(
     val task: Task?,
-    val ActionType: String
+    val actionType: String
 ) : Serializable
 
 const val TASK_ACTION_RESULT = "TASK_ACTION_RESULT"
