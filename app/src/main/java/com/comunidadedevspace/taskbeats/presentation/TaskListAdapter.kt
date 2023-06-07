@@ -56,7 +56,7 @@ class TaskListViewHolder(
              openTaskDetailView:(task: Task) -> Unit
     ){
         tvTaskTitle.text = task.title
-        tvTaskDescription.text = "${task.id}- ${task.description}"
+        tvTaskDescription.text = "${task.description}"
 
         view.setOnClickListener {
             openTaskDetailView.invoke(task)

@@ -2,4 +2,6 @@
     <string name="app_name">TaskBeats</string>
     <string name="delete">Delete</string>
     <string name="delete_all">Delete All</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello news fragment</string>
 </resources>
